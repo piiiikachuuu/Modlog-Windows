@@ -1,4 +1,4 @@
 Modlog-Windows
 ==============
 
-A modlog implementation for the Windows OS
+A modlog implementation for the Windows OS.
