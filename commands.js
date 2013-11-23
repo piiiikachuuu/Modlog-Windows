@@ -1,14 +1,14 @@
 	modlog: function(target, room, user, connection) {
-        if (!this.can('modlog')) {
-                return this.sendReply('/modlog - Access denied.');
-        }
-        var lines = parseInt(target || 15, 10);
-        if (lines > 100) lines = 100;
-        var filename = 'logs/modlog.txt';
-        if (!lines || lines < 0) {
-                if (target.match(/^["'].+["']$/)) target = target.substring(1, target.length-1);
-        }
-        target = target.replace(/\\/g,'\\\\\\\\').replace(/["'`]/g,'\'\\$&\'').replace(/[\{\}\[\]\(\)\$\^\.\?\+\-\*]/g,'[$&]');
+        	if (!this.can('modlog')) {
+                	return this.sendReply('/modlog - Access denied.');
+        	}
+        	var lines = parseInt(target || 15, 10);
+        	if (lines > 100) lines = 100;
+        	var filename = 'logs/modlog.txt';
+        	if (!lines || lines < 0) {
+                	if (target.match(/^["'].+["']$/)) target = target.substring(1, target.length-1);
+        	}
+        	target = target.replace(/\\/g,'\\\\\\\\').replace(/["'`]/g,'\'\\$&\'').replace(/[\{\}\[\]\(\)\$\^\.\?\+\-\*]/g,'[$&]');
 		var data = fs.readFileSync(filename, 'utf8');
 		data = data.split("\n");
 		var newArray = [];
